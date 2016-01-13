@@ -5,13 +5,16 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<link rel="stylesheet" type="text/css" href="CSS/style.css">
 <title>Bienvenue sur le Site de BLBLCar</title>
 </head>
 <body>
-    <h1><p>BL</p>BL<p>CAR</p>: Service de covoiturage</h1>
-    <div><a href="/WEB-INF/User/identification.jsp" >Se connecter</a></div>
-    <div><a href="/WEB-INF/User/inscription.jsp" >S'inscrire</a></div>
-    <c:import url="/WEB-INF/User/identification.jsp"/>
+    <h1><span>BL</span>BL<span>CAR</span>: Service de covoiturage</h1>
+    <fieldset>
+        <div><a href="/WEB-INF/User/identification.jsp" >Se connecter</a></div><BR><BR>
+        <div><a href="/WEB-INF/User/inscription.jsp" >S'inscrire</a></div>
+    </fieldset><br>
+    <c:import url="/WEB-INF/User/identification.jsp"/><br>
     <c:import url="/WEB-INF/User/inscription.jsp"/>
 </body>
 </html>
