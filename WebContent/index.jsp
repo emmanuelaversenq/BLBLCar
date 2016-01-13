@@ -5,9 +5,11 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Insert title here</title>
+<title>Bienvenue sur le Site de BLBLCar</title>
 </head>
 <body>
-
+    <h1><p>BL</p>BL<p>CAR</p>: Service de covoiturage</h1>
+    <div>Se connecter</div>
+    <div>S'inscrire</div>
 </body>
 </html>
