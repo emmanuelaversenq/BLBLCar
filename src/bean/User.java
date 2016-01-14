@@ -15,51 +15,51 @@ public class User implements Serializable{
 	private String pwd;
 	
 	
-	String getName() {
+	public String getName() {
 		return name;
 	}
 
-	void setName(String name) {
+	public void setName(String name) {
 		this.name = name;
 	}
 
-	String getFirstname() {
+	public String getFirstname() {
 		return firstname;
 	}
 
-	void setFirstname(String firstname) {
+	public void setFirstname(String firstname) {
 		this.firstname = firstname;
 	}
 
-	String getEmail() {
+	public String getEmail() {
 		return email;
 	}
 
-	void setEmail(String email) {
+	public void setEmail(String email) {
 		this.email = email;
 	}
 
-	Adresse getAdress() {
+	public Adresse getAdress() {
 		return adress;
 	}
 
-	void setAdress(Adresse adress) {
+	public void setAdress(Adresse adress) {
 		this.adress = adress;
 	}
 
-	boolean isPassager() {
+	public boolean isPassager() {
 		return passenger;
 	}
 
-	void setPassager(boolean passenger) {
+	public void setPassager(boolean passenger) {
 		this.passenger = passenger;
 	}
 
-	boolean isDriver() {
+	public boolean isDriver() {
 		return driver;
 	}
 
-	void setDriver(boolean driver) {
+	public void setDriver(boolean driver) {
 		this.driver = driver;
 	}
 
