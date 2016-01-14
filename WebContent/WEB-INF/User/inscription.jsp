@@ -8,7 +8,7 @@
 <title>Inscription</title>
 </head>
 <body>
-<div class = "left"></div> 
+
 <form method="post" action="Register">
 <div class ="center">
     <fieldset>
@@ -30,6 +30,6 @@
     </fieldset>   
     </div>  
 </form>
-<div class = "right"></div> 
+
 </body>
 </html>

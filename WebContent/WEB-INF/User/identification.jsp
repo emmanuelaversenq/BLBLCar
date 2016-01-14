@@ -9,8 +9,13 @@
 <title>Insert title here</title>
 </head>
 <body>
+<<<<<<< HEAD
 <div class = "left"></div> 
 <form  method="Post" action="BLBLCar">
+=======
+
+<form  method="Post" action="BlblCar">
+>>>>>>> maversion
 <div class ="center">
 <fieldset>
  <label>Login </label> <input id=nom name=login type=text value="${form['login']}"><span class="error">${errors['login']}</span></br>
@@ -19,6 +24,6 @@
  </fieldset>
  </div>
  </form>
- <div class = "right"></div> 
+
 </body>
 </html>
