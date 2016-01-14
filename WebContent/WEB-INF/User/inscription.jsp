@@ -10,7 +10,8 @@
 <body>
 
 <form method="post" action="Register">
-<div class ="center">
+<div class="bloc">
+    <div class ="center">
     <fieldset>
 	    <label>Identifiant</label><input type="text" name="login"/><br/>
 	    <label>Mot de passe</label><input type="password" name="pwd"/><br/>
@@ -28,7 +29,8 @@
 	    <input type="checkbox" name="driver"/>Conducteur<br/>
 	    <input type="checkbox" name="passenger"/>Passager<br/>
     </fieldset>   
-    </div>  
+    </div>
+</div>
 </form>
 
 </body>

@@ -20,9 +20,7 @@ form input.sansLabel {
 margin-left: 200px;
 }
 .left {
-
     position: absolute;
-      
     background-color:  rgb(184,7,25);
     top: 0em;
     left : 1%;
@@ -72,4 +70,16 @@ mark {
 
 #identification{
     visibility: Hidden;
+}
+
+.bloc{
+	position: absolute;
+    top: 35%;
+    left : 0%;
+    width: 100%;
+}
+
+.souligne{
+	color : rgb(0,0,255);
+	text-decoration: underline;
 }

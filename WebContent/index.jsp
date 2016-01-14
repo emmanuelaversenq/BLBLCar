@@ -44,8 +44,8 @@ function toggle(insc,ident)
     </div>
        
     <div class="centerLiens">
-        <div><href="#" onclick = "toggle('identification','inscription')" ><b>Se connecter<br><br></a></div>
-        <div><href="#" onclick = "toggle('inscription','identification')" ><b>S'inscrire</b></a></div>
+        <div class="souligne"><href="#" onclick = "toggle('identification','inscription')" ><b>Se connecter<br><br></a></div>
+        <div class="souligne"><href="#" onclick = "toggle('inscription','identification')" ><b>S'inscrire</b></a></div>
     </div>
         
     <div id="identification"><c:import url="/WEB-INF/User/identification.jsp" /></div>
