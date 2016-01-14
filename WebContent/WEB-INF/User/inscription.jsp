@@ -8,12 +8,16 @@
 <title>Inscription</title>
 </head>
 <body>
+<div class = "left"></div> 
 <form method="post" action="Register">
+<div class ="center">
     <fieldset>
 	    <label>Identifiant</label><input type="text" name="login"/><br/>
 	    <label>Mot de passe</label><input type="password" name="pwd"/><br/>
 	    <label>Confirmation</label><input type="password" name="confirm"/><br/>
     </fieldset>
+     </div> 
+    <div class ="center">
     <fieldset>
 	    <label>Nom</label><input type="text" name="name"/><br/>
 	    <label>Prénom</label><input type="text" name="firstName"/><br/>
@@ -23,7 +27,9 @@
 	    <label>CP</label><input type="text" name="cp"/><br/>
 	    <input type="checkbox" name="driver"/>Conducteur<br/>
 	    <input type="checkbox" name="passenger"/>Passager<br/>
-    </fieldset>
+    </fieldset>   
+    </div>  
 </form>
+<div class = "right"></div> 
 </body>
 </html>

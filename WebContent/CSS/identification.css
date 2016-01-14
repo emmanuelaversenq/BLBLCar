@@ -3,7 +3,7 @@ body, p, legend, label, input {
 font: normal 8pt verdana, helvetica, sans-serif;
 }
 fieldset {
-padding: 10px;
+padding: 100x;
 border: 1px #0568CD solid;
 }
 legend {
@@ -33,4 +33,37 @@ color: #900;
 .info {
 font-style: italic;
 color: #E8A22B;
+}
+
+.left {
+
+    position: absolute;
+    background-color:  rgb(211,20,58);  
+    top: 0em;
+    left : 1%;
+    width : 18%;
+    border-right: 1px solid black;
+    height :100%;
+}
+
+.right {
+    position : absolute;
+    background-color:  rgb(211,20,58);
+    top: 0em;
+    right:  1%;
+    width : 18%;
+    border-left : 1px solid black;
+    height :100%;
+}
+
+.center {
+    box-shadow: 10px 10px 5px #888;
+    /*border-bottom-right-radius: 10% 50%;
+    color: rgb(0,47,127);
+    /*background-color: : rgb(199,199,199);*/
+    margin: 5em 23%; /* marge : To-Bottom Left Rigth */
+    border-top : 1px dashed red:
+    border-bottom:1px dotted red;
+    /*display: inline-block;
+    vertical-align: top;*/
 }

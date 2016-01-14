@@ -1,6 +1,7 @@
 @CHARSET "ISO-8859-1";
 body, p, legend, label, input {
 font: normal 8pt verdana, helvetica, sans-serif;
+ background-color:  rgb(207,207,207);
 }
 fieldset {
 padding: 10px;
@@ -18,3 +19,49 @@ border: 1px #999 solid;
 form input.sansLabel {
 margin-left: 200px;
 }
+.left {
+
+    position: absolute;
+      
+     background-color:  rgb(184,7,25);
+    top: 0em;
+    left : 1%;
+    width : 18%;
+    border-right: 1px solid black;
+    height :100%;
+}
+
+.right {
+    position : absolute;
+     background-color:  rgb(184,7,25);
+    top: 0em;
+    right:  1%;
+    width : 18%;
+    border-left : 1px solid black;
+    height :100%;
+}
+.center {
+    box-shadow: 10px 10px 5px #888;
+    margin: 6em 23%; /* marge : To-Bottom Left Rigth */
+    border-top : 5px dashed red:
+/*     border-bottom :1px dotted red;  */
+}
+
+.centerLiens {
+    box-shadow: 10px 10px 5px #888;
+    margin: 5em 23%; /* marge : To-Bottom Left Rigth */
+    border-top : 1px dashed red:
+    border-bottom:1px dotted red;
+    font: normal 15pt verdana, helvetica, sans-serif; 
+}
+.centerTitle {
+    box-shadow: 10px 10px 5px #888;
+    margin: 5em 23%; /* marge : To-Bottom Left Rigth */
+    border-top : 1px dashed red:
+    border-bottom:1px dotted red;
+    font: normal 10pt verdana, helvetica, sans-serif; 
+}
+mark {
+	background-color : rgb(207,207,207);
+    color: rgb(184,7,25);
+ }
