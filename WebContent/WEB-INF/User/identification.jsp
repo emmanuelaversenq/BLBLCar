@@ -10,11 +10,11 @@
 </head>
 <body>
 <div class = "left"></div> 
-<form  method="Post" action="BlblCar">
+<form  method="Post" action="BLBLCar">
 <div class ="center">
 <fieldset>
- <label>Login </label> <input id=nom name=login type=text></br>
- <label>Password <span class="requis"> </label><input type="password" name="pwd" /></br>
+ <label>Login </label> <input id=nom name=login type=text value="${form['login']}"><span class="error">${errors['login']}</span></br>
+ <label>Password <span class="requis"> </label><input type="password" name="pwd" /><span class="error">${errors['pwd']}</span></br>
   <input type="submit" name="envoi" value="Identification"> 
  </fieldset>
  </div>
