@@ -13,8 +13,8 @@
 <form method="post" action="BLBLCar">
 <div class ="center">
     <fieldset>
-	    <label>Identifiant</label><input type="text" name="login" value="${ user.login }"/><span class="error">${errors['user.login']}</span><br/>
-	    <label>Mot de passe</label><input type="password" name="pwd" value="${ user.pwd }"/><span class="error">${errors['user.pwd']}</span><br/>
+	    <label>Identifiant</label><input type="text" name="loginIns" value="${ user.login }"/><span class="error">${errors['user.login']}</span><br/>
+	    <label>Mot de passe</label><input type="password" name="pwdIns" value="${ user.pwd }"/><span class="error">${errors['user.pwd']}</span><br/>
 	    <label>Confirmation</label><input type="password" name="pwdConfirm" value="${ pwdConfirm }"/><span class="error">${errors['pwdConfirm']}</span><br/>
     </fieldset>
      </div> 
@@ -26,21 +26,25 @@
 	    <label>Adresse : rue</label><input type="text" name="street" value="${ adress.street }"/><span class="error">${errors['adress.street']}</span><br/>
         <label>CP</label><input type="text" name="cp" value="${ adress.cp }"/><br/>
 	    <label>ville</label><input type="text" name="city" value="${ adress.city }"/><span class="error">${errors['adress.city']}</span><br/>
-	    <input type="checkbox" name="driver" value="${ user.driver }"/>Conducteur<br/>
-	    <input type="checkbox" name="passenger" value="${ user.passenger }"/>Passager        <span class="error">${errors['driverPassenger']}</span><br/>
-	    
-<%-- 	    <c:if test="${ user.driver }"> --%>
-<%-- 	       <input type="checkbox" name="passenger" value="${ driver }" checked="checked"/> --%>
-<%-- 	    </c:if> --%>
-<%-- 	    <c:if test="${ !user.driver }"> --%>
-<%--            <input type="checkbox" name="passenger" value="${ driver }"/> --%>
-<%--         </c:if>Conducteur<br/> --%>
-	    
+	    	    
+	    <c:if test="${ user.driver }">
+	       <input type="checkbox" name="driver" value="driver" checked="checked"/>
+	    </c:if>
+	    <c:if test="${ !user.driver }">
+           <input type="checkbox" name="driver" value="driver"/>
+        </c:if>Conducteur<br/>
+        
+        <c:if test="${ user.passenger }">
+           <input type="checkbox" name="passenger" value="passenger" checked="checked"/>
+        </c:if>
+        <c:if test="${ !user.passenger }">
+           <input type="checkbox" name="passenger" value="passenger"/>
+        </c:if>Passager<br/><span class="error">${errors['driverPassenger']}</span><br/>
+        	    
 	    <input type="submit" name="envoi" value="Enregistrer"/><br/>
-	    ${msgInscription}<br/>
+	    <br/>${msgInscription}<br/>
     </fieldset>   
     </div>
-</div>
 </form>
 
 </body>

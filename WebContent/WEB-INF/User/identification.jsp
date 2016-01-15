@@ -10,7 +10,7 @@
 </head>
 <body>
 
-<form  method="Post" action="BlblCar">
+<form  method="Post" action="BLBLCar">
 <div class ="bloc">
     <div class ="center">
     <fieldset>

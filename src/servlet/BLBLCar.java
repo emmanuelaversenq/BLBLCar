@@ -1,7 +1,9 @@
 package servlet;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import javax.servlet.ServletException;
@@ -18,6 +20,10 @@ import bean.User;
  */
 @WebServlet("/BLBLCar")
 public class BLBLCar extends HttpServlet {
+	
+	// JPA Persistence des données
+	private List<User> listUser = new ArrayList<User>();
+	
 	private static final long serialVersionUID = 1L;
 	
 	//public static String VIEW_PAGES_URL = "/WEB-INF/index.jsp";
@@ -61,33 +67,21 @@ public class BLBLCar extends HttpServlet {
 		errors = new HashMap<String, String>();
 		errorInscription=false;
 		
-		String loginval="ksah";
-		String motdepasse="1111111111";
-		
-		 if (!login.equals(loginval)){
-		 errMsg = "login incorrect";
-		 }
-		
-		if (errMsg != null) {
+		User cnxUser = SearchUser(login);
+		if (cnxUser == null) {
+			errMsg = "login incorrect";
 			errors.put(FIELD_LOGIN, errMsg);
 			actionMessage = "Echec de l'identification";
 			errorIdentification=true;
+		} else {
+			if (!pwd.equals(cnxUser.getPwd())) {
+				errMsg = "mot de passe incorect";
+				errors.put(FIELD_PWD, errMsg);
+				actionMessage = "Echec de l'identification";
+				errorIdentification=true;
+			}
 		}
 		
-		if (errMsg == null) {
-			form.put(FIELD_LOGIN, login);
-		}
-		
-		if (!pwd.equals(motdepasse)){
-		errMsg = "mot de passe incorect";
-		}
-		
-		if (errMsg != null) {
-			errors.put(FIELD_PWD, errMsg);
-			actionMessage = "Echec de l'identification";
-			errorIdentification=true;
-		}
-
 		request.setAttribute("actionMessage", actionMessage);
 		request.setAttribute("errorStatus",errorIdentification);
 		
@@ -95,8 +89,8 @@ public class BLBLCar extends HttpServlet {
 		user.setAdress(new Adresse("", "", ""));
 		String pwdConfirm = request.getParameter("pwdConfirm");
 		
-		user.setLogin(request.getParameter("login"));
-		user.setPwd(request.getParameter("pwd"));
+		user.setLogin(request.getParameter("loginIns"));
+		user.setPwd(request.getParameter("pwdIns"));
 		user.setName(request.getParameter("name"));
 		user.setFirstname(request.getParameter("firstname"));
 		user.setEmail(request.getParameter("email"));
@@ -108,9 +102,6 @@ public class BLBLCar extends HttpServlet {
 		user.setDriver(request.getParameter("driver") != null);
 		user.setPassenger(request.getParameter("passenger") != null);
 		
-		String driver = request.getParameter("passenger");
-		
-		System.out.println("Driver = " + driver + " / user.getDriver = " + (user.isDriver() ? "true" : "false"));
 		if (user.getLogin() == null || user.getLogin().length() == 0) {
 			errors.put("user.login", "L'identifiant utilisateur est obligatoire");
 			errorInscription=true;
@@ -119,9 +110,11 @@ public class BLBLCar extends HttpServlet {
 			errors.put("user.pwd", "Le mot de passe est obligatoire");
 			errorInscription=true;
 		}
-		if (!user.getPwd().equals(pwdConfirm)) {
-			errors.put("pwdConfirm", "La confirmation du mot de passe n'est pas valide");
-			errorInscription=true;
+		if (user.getPwd() != null) {
+			if (!user.getPwd().equals(pwdConfirm)) {
+				errors.put("pwdConfirm", "La confirmation du mot de passe n'est pas valide");
+				errorInscription=true;
+			}
 		}
 		if (user.getName() == null || user.getName().length() == 0) {
 			errors.put("user.name", "Le nom est obligatoire");
@@ -152,6 +145,10 @@ public class BLBLCar extends HttpServlet {
 		
 		msgInscription = (errorInscription ? "Echec de l'inscription" : "Succès de l'inscription");
 		
+		if (!errorInscription) {
+			listUser.add(user);
+		}
+		
 		request.setAttribute("user", user);	
 		request.setAttribute("adress", user.getAdress());	
 		request.setAttribute("pwdConfirm", pwdConfirm);	
@@ -176,5 +173,16 @@ public class BLBLCar extends HttpServlet {
 			return "L'adresse mail est obligatoire";
 		}
 	}
-
+	
+	private User SearchUser(String login) {
+		User result = null;
+		
+		for(int i = 0; i<listUser.size(); i++) {
+			if (login.equals(listUser.get(i).getLogin())) {
+				result = listUser.get(i);
+				break;
+			}
+		}
+		return result;
+	}	
 }
