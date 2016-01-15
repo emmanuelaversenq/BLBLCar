@@ -29,6 +29,12 @@ margin-left: 200px;
     height :100%;
 }
 
+.leftMap {
+ 
+     background-color:  white;
+  
+}
+
 .right {
     position : absolute;
      background-color:  rgb(184,7,25);

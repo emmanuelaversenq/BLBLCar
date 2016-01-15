@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+
 <html>
 
 
@@ -31,7 +31,8 @@ function toggle(insc,ident)
     }
 }
 </script>
-
+    <script type="text/javascript" src="http://maps.google.com/maps/api/js"></script>
+      <script src="js/map.js" type="text/javascript" language="javascript"></script>
 
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
@@ -44,10 +45,13 @@ function toggle(insc,ident)
     </div>
        
     <div class="centerLiens">
-        <div class="souligne"><href="#" onclick = "toggle('identification','inscription')" ><b>Se connecter<br><br></a></div>
-        <div class="souligne"><href="#" onclick = "toggle('inscription','identification')" ><b>S'inscrire</b></a></div>
-    </div>
+        <div class="souligne"><a href="#" onclick = "toggle('identification','inscription')" ><b>Se connecter<br><br></a></div>
+        <div class="souligne"><a href="#" onclick = "toggle('inscription','identification')" ><b>S'inscrire</b></a></div>
         
+    </div>
+  
+    <c:import url="/WEB-INF/Map/map.jsp"/>  
+   
     <div id="identification"><c:import url="/WEB-INF/User/identification.jsp" /></div>
     <div id="inscription"><c:import url="/WEB-INF/User/inscription.jsp"/></div>
  <div class = "right"></div>
