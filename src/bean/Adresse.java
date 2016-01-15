@@ -1,6 +1,8 @@
 package bean;
 
-public class Adresse {
+import java.io.Serializable;
+
+public class Adresse implements Serializable{
 	
 	private String street;
 	private String city;
@@ -21,27 +23,27 @@ public class Adresse {
 
 
 
-	String getStreet() {
+	public String getStreet() {
 		return street;
 	}
 
-	void setStreet(String street) {
+	public void setStreet(String street) {
 		this.street = street;
 	}
 
-	String getCity() {
+	public String getCity() {
 		return city;
 	}
 
-	void setCity(String city) {
+	public void setCity(String city) {
 		this.city = city;
 	}
 
-	String getCp() {
+	public String getCp() {
 		return cp;
 	}
 
-	void setCp(String cp) {
+	public void setCp(String cp) {
 		this.cp = cp;
 	}
 

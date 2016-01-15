@@ -4,16 +4,45 @@ import java.io.Serializable;
 
 public class User implements Serializable{
 
-
+	private String login;
+	private String pwd;
 	private String name;
 	private String firstname;
 	private String email;
 	private Adresse adress;
 	private boolean passenger;
 	private boolean driver;
-	private String login;
-	private String pwd;
 	
+	public boolean isPassenger() {
+		return passenger;
+	}
+
+	public void setPassenger(boolean passenger) {
+		this.passenger = passenger;
+	}
+
+	public boolean isDriver() {
+		return driver;
+	}
+
+	public void setDriver(boolean driver) {
+		this.driver = driver;
+	}
+
+	public void setLogin(String login) {
+		this.login = login;
+	}
+
+	public User() {
+		login = "";
+		pwd = "";
+		name = "";
+		firstname = "";
+		email = "";
+		adress = null;
+		passenger = false;
+		driver = false;
+	}
 	
 	public String getName() {
 		return name;
@@ -47,28 +76,8 @@ public class User implements Serializable{
 		this.adress = adress;
 	}
 
-	public boolean isPassager() {
-		return passenger;
-	}
-
-	public void setPassager(boolean passenger) {
-		this.passenger = passenger;
-	}
-
-	public boolean isDriver() {
-		return driver;
-	}
-
-	public void setDriver(boolean driver) {
-		this.driver = driver;
-	}
-
 	public String getLogin() {
 		return login;
-	}
-
-	public void setLoggin(String login) {
-		this.login = login;
 	}
 
 	public String getPwd() {
