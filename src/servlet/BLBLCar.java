@@ -29,6 +29,7 @@ public class BLBLCar extends HttpServlet {
 		// TODO Auto-generated method stub
 //		response.getWriter().append("Served at: ").append(request.getContextPath());
 		this.getServletContext().getRequestDispatcher("/index.jsp").forward(request, response);
+		
 	}
 
 	/**
@@ -36,7 +37,8 @@ public class BLBLCar extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		doGet(request, response);
+//		doGet(request, response);
+		
 	}
 
 }
