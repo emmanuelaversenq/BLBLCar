@@ -6,7 +6,7 @@ function toggle(insc,ident)
     nodeInsc = document.getElementById(insc);
     nodeIdent = document.getElementById(ident);
     
-    if (nodeInsc.style.visibility=="hidden")
+    if ((nodeInsc.style.visibility=="hidden")||(nodeInsc.style.visibility==""))
     {
         // Contenu caché, le montrer
         
