@@ -149,6 +149,7 @@ public class BLBLCar extends HttpServlet {
 			listUser.add(user);
 		}
 		
+		// Manolo
 		
 		request.setAttribute("user", user);	
 		request.setAttribute("adress", user.getAdress());	
