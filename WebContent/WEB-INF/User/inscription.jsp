@@ -4,13 +4,14 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <link rel="stylesheet" type="text/css" href="CSS/inscription.css">
 <title>Inscription</title>
 </head>
 <body>
 <div class = "left"></div> 
 <form method="post" action="BLBLCar">
+<div class ="bloc">
 <div class ="center">
     <fieldset>
 	    <label>Identifiant</label><input type="text" name="loginIns" value="${ user.login }"/><span class="error">${errors['user.login']}</span><br/>
@@ -44,6 +45,7 @@
 	    <input type="submit" name="envoi" value="Enregistrer"/><br/>
 	    <br/>${msgInscription}<br/>
     </fieldset>   
+    </div>
     </div>
 </form>
 

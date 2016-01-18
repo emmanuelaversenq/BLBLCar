@@ -15,6 +15,7 @@ function init() {
 	var maison = new google.maps.LatLng(43.53992, 1.5114959999999655);
 	/*option par défaut de la carte*/
 	var myOptions = {
+			
 		zoom:10,
 		mapTypeId: google.maps.MapTypeId.ROADMAP,
 		center: maison
@@ -28,7 +29,12 @@ function init() {
 	directionsDisplay.setMap(map);
 	//création du marqueur
                 var marqueur = new google.maps.Marker({
-
+                	icon: {
+                		url :"img/BL.png",
+                		size: new google.maps.Size(80,50),
+                		anchor: new google.maps.Point(43.53992, 1.5114959999999655)
+                	},         	
+ 
                 position: new google.maps.LatLng(43.53992, 1.5114959999999655),
                 map: map,
 				title:"Berger-Levrault"
@@ -89,6 +95,11 @@ function rechercher(src,src2){
 	/*ajoute un marqueur à l'adresse choisie*/
 	if (marker2) { marker2.setMap(null);}
 	marker2 = new google.maps.Marker({
+		icon: {
+    		url :"img/BL.png",
+    		size: new google.maps.Size(80, 50),
+    		anchor: new google.maps.Point(43.53992, 1.5114959999999655)
+    	}, 
 	map: map,
 	position: results[0].geometry.location
 	});

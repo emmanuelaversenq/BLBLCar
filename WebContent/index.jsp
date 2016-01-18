@@ -20,12 +20,15 @@
 	</div>
 
 	<div class="centerLiens">
-		<a href="#" onclick="toggle('identification','inscription')"><b>Se connecter</b><br><br></a>
-		<a href="#" onclick="toggle('inscription','identification')"><b>S'inscrire</b></a>
+		<a href="#" onclick="toggle('identification','inscription','map')"><b>Se connecter</b><br><br></a>
+		<a href="#" onclick="toggle('inscription','identification','map')"><b>S'inscrire</b></a>
 		
 	</div>
-
-	<c:import url="/WEB-INF/Map/map.jsp" />
+    
+    <div id ="map">
+        <c:import url="/WEB-INF/Map/map.jsp" />
+    </div>
+	
 
 	<div id="identification">
 		<c:import url="/WEB-INF/User/identification.jsp" />

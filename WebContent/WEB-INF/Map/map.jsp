@@ -16,8 +16,9 @@
 <title>Insert title here</title>
 </head>
 <body onload="init()">
-    <div class="left">
-       <div class = "leftMap" >
+
+    <div class="center">
+       <div class = "map" >
      
     <table>
     <tr>
@@ -31,7 +32,7 @@
 	    <td><input type="text" id="adrArr" value="Avenue de la Méridienne, Labège" style="width:100%;"></td><td>
      </tr>
     <tr>
-    <td><input type="button" value="Recherche"onclick="rechercher('adrDep','adrArr')">
+    <td><input type="button" value="Recherche" onclick="rechercher('adrDep','adrArr')" >
     </td></tr>
     </table>
     </div>
