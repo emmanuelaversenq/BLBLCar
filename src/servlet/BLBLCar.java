@@ -148,9 +148,9 @@ public class BLBLCar extends HttpServlet {
 		if (!errorInscription) {
 			listUser.add(user);
 		}
-		
-		// Manolo
-		
+
+		// commentaire Ksah & Manolo
+	
 		request.setAttribute("user", user);	
 		request.setAttribute("adress", user.getAdress());	
 		request.setAttribute("pwdConfirm", pwdConfirm);	
