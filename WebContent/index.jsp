@@ -25,15 +25,17 @@
 		
 	</div>
     
-    <div id ="map">
+    <div id ="map" class="${ (idVisible || insVisible ? 'hidden' : 'visible') }">
         <c:import url="/WEB-INF/Map/map.jsp" />
     </div>
 	
+ 
+    <div id="identification" class="${ (idVisible ? 'visible' : 'hidden') }">
+        <c:import url="/WEB-INF/User/identification.jsp" />
+    </div>
 
-	<div id="identification">
-		<c:import url="/WEB-INF/User/identification.jsp" />
-	</div>
-	<div id="inscription">
+    
+	<div id="inscription" class="${ (insVisible ? 'visible' : 'hidden') }">
 		<c:import url="/WEB-INF/User/inscription.jsp" />
 	</div>
 	<div class="right"></div>

@@ -14,6 +14,7 @@
 <div class ="bloc">
 <div class ="center">
     <fieldset>
+        <input type="hidden" name="ecran"  value="inscription">
 	    <label>Identifiant</label><input type="text" name="loginIns" value="${ user.login }"/><span class="error">${errors['user.login']}</span><br/>
 	    <label>Mot de passe</label><input type="password" name="pwdIns" value="${ user.pwd }"/><span class="error">${errors['user.pwd']}</span><br/>
 	    <label>Confirmation</label><input type="password" name="pwdConfirm" value="${ pwdConfirm }"/><span class="error">${errors['pwdConfirm']}</span><br/>

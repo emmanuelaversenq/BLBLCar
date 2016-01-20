@@ -71,11 +71,13 @@ mark {
     color: rgb(184,7,25);
  }
  
-#inscription{
-    visibility: Hidden;
+#map.hidden {
+	visibility: Hidden;
 }
-
-#identification{
+#identification.hidden {
+    visibility: Hidden;
+} 
+#inscription.hidden {
     visibility: Hidden;
 }
 

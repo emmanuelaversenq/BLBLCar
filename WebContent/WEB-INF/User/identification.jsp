@@ -13,6 +13,7 @@
         <div class ="bloc">
             <div class ="center">
                 <fieldset>
+                    <input type="hidden" name="ecran"  value="identification">
                     <label>Login </label> <input id=nom name=login type=text value="${form['login']}"><span class="error">${errors['login']}</span><br>
                     <label>Password </label><input type="password" name="pwd" /><span class="error">${errors['pwd']}</span><br>
                     <input type="submit" name="envoi" value="Identification"> 
