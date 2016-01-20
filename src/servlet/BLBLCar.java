@@ -67,7 +67,7 @@ public class BLBLCar extends HttpServlet {
 		errors = new HashMap<String, String>();
 		errorInscription=false;
 		
-		User cnxUser = SearchUser(login);
+		User cnxUser = (login == null || login.equals("") ? null : SearchUser(login));
 		if (cnxUser == null) {
 			errMsg = "login incorrect";
 			errors.put(FIELD_LOGIN, errMsg);
@@ -148,8 +148,6 @@ public class BLBLCar extends HttpServlet {
 		if (!errorInscription) {
 			listUser.add(user);
 		}
-
-		// commentaire Ksah & Manolo
 	
 		request.setAttribute("user", user);	
 		request.setAttribute("adress", user.getAdress());	
@@ -179,7 +177,7 @@ public class BLBLCar extends HttpServlet {
 	private User SearchUser(String login) {
 		User result = null;
 		
-		for(int i = 0; i<listUser.size(); i++) {
+		for (int i = 0; i < listUser.size(); i++) {
 			if (login.equals(listUser.get(i).getLogin())) {
 				result = listUser.get(i);
 				break;
