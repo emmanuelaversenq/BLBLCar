@@ -25,20 +25,24 @@
    
 	    <td> <b>Départ: </b></td>
 
-	    <td><input type="text" id="adrDep" value=""style="width:100%  ;"></td>
+	    <td><input type="text" id="adrDep" value="" style="width:100%  ;"></td>
+	    <td>  </td>
+	    <td>
     </tr>
     <tr>
 	    <td><b>Arrivée: </b></td>
-	    <td><input type="text" id="adrArr" value="Avenue de la Méridienne, Labège" style="width:100%;"></td><td>
+	    <td><input type="text" id="adrArr" value="64 Avenue Jean Rostantd, Labège" style="width:100%;"></td><td>
      </tr>
     <tr>
-    <td><input type="button" value="Recherche" onclick="rechercher('adrDep','adrArr')" >
-    </td></tr>
+    <td><input type="button" value="Recherche" onclick="rechercher('adrDep','adrArr') ; codeAddress('adrDep', 'adrArr') ;" ></td>
+   <td><input type="button" value="Afficher un périmètre" onclick="affichePerimetre('adrDep') ;" ></td>
+    </tr>
     </table>
     </div>
  
-    <div id="divMap" style="float:left;width:100%; height:50%"></div>
-
+    <div id="divMap" style="float:left;width:100%; height:50%"
+   
+    ></div>
     </div>  
 
 </body>

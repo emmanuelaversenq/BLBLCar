@@ -4,7 +4,7 @@
 
 var directionsService = new google.maps.DirectionsService(); // service GoogleMaps
 var map,geocoder, marker, marker2; // La carte, le service de géocodage et les marqueurs
-var depart,arrivee,ptCheck; // point de départ, arrivé et de vérification
+var depart,arrivee,ptCheck; // point de départ, arrivée et de vérification
 
 /*initialise google MAP V3*/
 function init() {
@@ -12,7 +12,7 @@ function init() {
 	directionsDisplay = new google.maps.DirectionsRenderer();
 	/*emplacement par défaut de la carte (Toulouse)*/
 	/*var maison = new google.maps.LatLng(43.6042600, 1.4436700);*/
-	var maison = new google.maps.LatLng(43.53992, 1.5114959999999655);
+	var maison = new google.maps.LatLng(43.5432517 ,1.5122082999999975);
 	/*option par défaut de la carte*/
 	var myOptions = {
 			
@@ -32,14 +32,14 @@ function init() {
                 	icon: {
                 		url :"img/BL.png",
                 		size: new google.maps.Size(80,50),
-                		anchor: new google.maps.Point(43.53992, 1.5114959999999655)
+                		anchor: new google.maps.Point(43.5432517, 1.5122082999999975)
                 	},         	
  
-                position: new google.maps.LatLng(43.53992, 1.5114959999999655),
+                position: new google.maps.LatLng(43.5432517, 1.5122082999999975),
                 map: map,
 				title:"Berger-Levrault"
                 });
-	/*directionsDisplay.setPanel(document.getElementById("divRoute"));*/
+    directionsDisplay.setPanel(document.getElementById("divRoute"));
 	/*intialise le geocoder pour localiser les adresses */
 	geocoder = new google.maps.Geocoder();
 }
@@ -60,7 +60,7 @@ function trouveRoute() {
 		var monTrajet=response.routes[0] ;
 		var point0=monTrajet.overview_path[0];// Position (B:, K:)
 		var latPoint0=point0.K; // Latitude de départ du premier segment
-	var longPoint0=point0.B; // Longitude de départ du premiersegment
+		var longPoint0=point0.B; // Longitude de départ du premier segment
 	}
 	});
 	}
@@ -98,7 +98,7 @@ function rechercher(src,src2){
 		icon: {
     		url :"img/BL.png",
     		size: new google.maps.Size(80, 50),
-    		anchor: new google.maps.Point(43.53992, 1.5114959999999655)
+    		anchor: new google.maps.Point(43.5432517, 1.512208299999997)
     	}, 
 	map: map,
 	position: results[0].geometry.location
@@ -113,4 +113,96 @@ function rechercher(src,src2){
 	trouveRoute();
 	});
 }}
+
+
+
+function codeAddress(adressDep,adressArr) {
+	/* Appel au service de geocodage avec l'adresse en paramètre */
+	       geocoder.geocode( { 'address': document.getElementById(adressDep).value}, function(results,status       ){
+	       /* Si l'adresse a pu être géolocalisée */
+	       if (status == google.maps.GeocoderStatus.OK) {
+	             /* Récupération de sa latitude et de sa longitude */
+	           var latAdr1  = results[0].geometry.location.lat();
+	           var longAdr1  = results[0].geometry.location.lng();
+	           map.setCenter(results[0].geometry.location);
+	           
+	           geocoder.geocode( { 'address': document.getElementById(adressArr).value}, function(results,status2       ){
+	                    /* Si l'adresse a pu être géolocalisée */
+	                    if (status == google.maps.GeocoderStatus.OK && status2 == google.maps.GeocoderStatus.OK) {
+	                           /* Récupération de sa latitude et de sa longitude */
+	                        var latAdr2 = results[0].geometry.location.lat();
+	                        var longAdr2  = results[0].geometry.location.lng();
+	                        map.setCenter(results[0].geometry.location);
+	                        alert(distance(latAdr1, longAdr1, latAdr2, longAdr2));
+	                        
+	                    } else {
+	                         alert("Le geocodage n\'a pu etre effectue pour la raison suivante: " + status2);
+	                         }
+	                        
+	                        });
+	       } else {
+	            alert("Le geocodage n\'a pu etre effectue pour la raison suivante: " + status);
+	            }
+	           
+	           });
+	     
+	       
+	}
+
+function distance(lat_a, lon_a, lat_b, lon_b)  {
+    a = Math.PI / 180;
+    lat1 = lat_a * a;
+    lat2 = lat_b * a;
+    lon1 = lon_a * a;
+    lon2 = lon_b * a;
+    t1 = Math.sin(lat1) * Math.sin(lat2);
+    t2 = Math.cos(lat1) * Math.cos(lat2);
+    t3 = Math.cos(lon1 - lon2);
+    t4 = t2 * t3;
+    t5 = t1 + t4;
+    rad_dist = Math.atan(-t5/Math.sqrt(-t5 * t5 +1)) + 2 * Math.atan(1);
+    return (rad_dist * 3437.74677 * 1.1508) * 1.6093470878864446;
+}
+
+
+function affichePerimetre(src){
+	 geocoder.geocode( { 'address':
+		 document.getElementById(src).value}, function(results,
+		status){
+    if (status == google.maps.GeocoderStatus.OK) {
+     /* Récupération de sa latitude et de sa longitude */
+    	
+    lat =  results[0].geometry.location.lat();
+    long =   results[0].geometry.location.lng();
+     map.setCenter(results[0].geometry.location);
+    
+//     alert(lat + " " + long);
+     /* Affichage du marker */
+ adressDep = new google.maps.LatLng(lat , long);
+     /* Permet de supprimer le marker précédemment affiché */
+ var myCircle = new google.maps.Circle({
+     center: adressDep,
+     radius: 2000,
+     strokeColor : "#0000FF",
+     strokeOpacity : 0.8,
+     strokeWeight :2,
+     fillColor: "#0000FF" ,
+     fillOpacity: 0.5,
+     map: map,
+     center: map.center,
+    
+
+ });
+
+     } else {
+     alert("Le geocodage n\'a pu etre effectue pour la raison suivante: " + status);
+     }
+    
+    });
+	  
+  	
+	 myCircle.setMap(map); 	  
+}
+
+
 
