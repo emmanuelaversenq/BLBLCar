@@ -1,5 +1,6 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <link rel="stylesheet" type="text/css" href="CSS/listUser.css">
+    <h3>Liste des passagers : </h3><br/>
 	<table>
 	    <tr>
 	        <th>Nom</th>

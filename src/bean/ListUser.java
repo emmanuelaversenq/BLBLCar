@@ -5,23 +5,25 @@ import java.util.List;
 
 public class ListUser {
 	
-	// TODO : JPA Persistence des données
-	public List<User> listUser = new ArrayList<User>();
-	
-	private static ListUser lu;
+	private static ListUser instance;
+	private List<User> liste = new ArrayList<User>();
 	
 	private ListUser() {}
 	
 	public static ListUser getInstance() {
-		if (lu == null) lu = new ListUser();
-		return lu;
+		if (instance == null) instance = new ListUser();
+		return instance;
+	}
+	
+	public void addUser(User user) {
+		liste.add(user);
 	}
 	
 	public List<User> getListPassenger() {
 		List<User> result = new ArrayList<User>();
-		for (int i = 0; i < listUser.size(); i++) {
-			if (listUser.get(i).isPassenger()) {
-				result.add(listUser.get(i));
+		for (int i = 0; i < liste.size(); i++) {
+			if (liste.get(i).isPassenger()) {
+				result.add(liste.get(i));
 			}
 		}
 		return result;
@@ -30,9 +32,9 @@ public class ListUser {
 	public User searchUser(String login) {
 		User result = null;
 		
-		for (int i = 0; i < listUser.size(); i++) {
-			if (login.equals(listUser.get(i).getLogin())) {
-				result = listUser.get(i);
+		for (int i = 0; i < liste.size(); i++) {
+			if (login.equals(liste.get(i).getLogin())) {
+				result = liste.get(i);
 				break;
 			}
 		}

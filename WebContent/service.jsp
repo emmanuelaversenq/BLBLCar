@@ -7,11 +7,13 @@
 <title>Service</title>
 </head>
 <body>
-    <form method="get" action="Service">
-        Bienvenue sur la page service de BL BL Car<br/><br/>
+    <form method="post" action="Service">
+        <h2>Bienvenue sur la page service de BL BL Car</h2><br/><br/>
         <div>
             <c:import url="/WEB-INF/User/listUser.jsp" />
         </div>
+        <br/><br/>
+        <input type="submit" name="logout" value="Logout"/><br/>
     </form>
 </body>
 </html>

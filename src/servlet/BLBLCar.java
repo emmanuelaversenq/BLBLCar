@@ -47,8 +47,7 @@ public class BLBLCar extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		request.setAttribute("idVisible", idVisible);
 		request.setAttribute("insVisible", insVisible);	
-		this.getServletContext().getRequestDispatcher("/index.jsp").forward(request, response);
-		
+		this.getServletContext().getRequestDispatcher("/index.jsp").forward(request, response); 
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -159,7 +158,7 @@ public class BLBLCar extends HttpServlet {
 		msgInscription = (errorInscription ? "Echec de l'inscription" : "Succès de l'inscription");
 		
 		if (!errorInscription) {
-			ListUser.getInstance().listUser.add(user);
+			ListUser.getInstance().addUser(user);
 		}
 	
 		if (!errorInscription) {

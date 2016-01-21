@@ -33,7 +33,6 @@ public class Service extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		listPassenger = ListUser.getInstance().getListPassenger();  
 		request.setAttribute("listPassenger", listPassenger);
-		System.out.println("Size = " + listPassenger.size());
 		this.getServletContext().getRequestDispatcher("/service.jsp").forward(request, response);
 	}
 
@@ -43,5 +42,4 @@ public class Service extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		doGet(request, response);
 	}
-
 }
