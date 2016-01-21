@@ -13,6 +13,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import bean.Adresse;
+import bean.ListUser;
 import bean.User;
 
 /**
@@ -21,11 +22,8 @@ import bean.User;
 @WebServlet("/BLBLCar")
 public class BLBLCar extends HttpServlet {
 	
-	// JPA Persistence des données
-	private List<User> listUser = new ArrayList<User>();
-	
 	private static final long serialVersionUID = 1L;
-	
+
 	//public static String VIEW_PAGES_URL = "/WEB-INF/index.jsp";
 	public static final String FIELD_LOGIN = "login";
 	public static final String FIELD_PWD = "pwd";
@@ -65,7 +63,7 @@ public class BLBLCar extends HttpServlet {
 		
 		errors = new HashMap<String, String>();
 		
-		User cnxUser = (login == null || login.equals("") ? null : SearchUser(login));
+		User cnxUser = (login == null || login.equals("") ? null : ListUser.getInstance().searchUser(login));
 		if (cnxUser == null) {
 			errMsg = "login incorrect";
 			errors.put(FIELD_LOGIN, errMsg);
@@ -161,11 +159,11 @@ public class BLBLCar extends HttpServlet {
 		msgInscription = (errorInscription ? "Echec de l'inscription" : "Succès de l'inscription");
 		
 		if (!errorInscription) {
-			listUser.add(user);
+			ListUser.getInstance().listUser.add(user);
 		}
 	
 		if (!errorInscription) {
-			this.getServletContext().getRequestDispatcher("/service.jsp").forward(request, response);
+			this.getServletContext().getRequestDispatcher("/Service").forward(request, response);
 			return;
 		}
 		
@@ -192,17 +190,5 @@ public class BLBLCar extends HttpServlet {
 		} else {
 			return "L'adresse mail est obligatoire";
 		}
-	}
-	
-	private User SearchUser(String login) {
-		User result = null;
-		
-		for (int i = 0; i < listUser.size(); i++) {
-			if (login.equals(listUser.get(i).getLogin())) {
-				result = listUser.get(i);
-				break;
-			}
-		}
-		return result;
 	}	
 }

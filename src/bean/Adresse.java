@@ -47,9 +47,8 @@ public class Adresse implements Serializable{
 		this.cp = cp;
 	}
 
-
-	
-	
-	
-	
+	@Override
+	public String toString() {
+		return street + " " + cp + " " + city;
+	}
 }
