@@ -13,7 +13,6 @@
             <c:import url="/WEB-INF/User/listUser.jsp" />
         </div>
         <br/><br/>
-        <input type="submit" name="logout" value="Logout"/><br/>
     </form>
 </body>
 </html>
