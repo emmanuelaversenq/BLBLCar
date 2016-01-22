@@ -166,6 +166,8 @@ function distance(lat_a, lon_a, lat_b, lon_b)  {
 
 
 function affichePerimetre(src){
+	var myCircle = null;
+	var adressDep = null;
 	 geocoder.geocode( { 'address':
 		 document.getElementById(src).value}, function(results,
 		status){
@@ -180,7 +182,7 @@ function affichePerimetre(src){
      /* Affichage du marker */
  adressDep = new google.maps.LatLng(lat , long);
      /* Permet de supprimer le marker précédemment affiché */
- var myCircle = new google.maps.Circle({
+ myCircle = new google.maps.Circle({
      center: adressDep,
      radius: 2000,
 //     strokeColor : "#0000FF",
@@ -192,9 +194,7 @@ function affichePerimetre(src){
      fillOpacity: 0.5,
      map: map,
      center: map.center,
-    
-
- });
+  });
 
      } else {
      alert("Le geocodage n\'a pu etre effectue pour la raison suivante: " + status);
