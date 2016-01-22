@@ -7,7 +7,16 @@ public class ListUser {
 	
 	private static ListUser instance;
 	private List<User> liste = new ArrayList<User>();
+	private User currentUser = null;
 	
+	public User getCurrentUser() {
+		return currentUser;
+	}
+
+	public void setCurrentUser(User currentUser) {
+		this.currentUser = currentUser;
+	}
+
 	private ListUser() {}
 	
 	public static ListUser getInstance() {

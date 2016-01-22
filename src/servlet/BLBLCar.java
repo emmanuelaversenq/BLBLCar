@@ -78,7 +78,8 @@ public class BLBLCar extends HttpServlet {
 		}
 			
 		if (!errorIdentification) {
-			this.getServletContext().getRequestDispatcher("/service.jsp").forward(request, response);
+			this.getServletContext().getRequestDispatcher("/Service").forward(request, response);
+			ListUser.getInstance().setCurrentUser(cnxUser);
 			return;
 		}
 		
@@ -156,12 +157,10 @@ public class BLBLCar extends HttpServlet {
 		}		
 		
 		msgInscription = (errorInscription ? "Echec de l'inscription" : "Succès de l'inscription");
-		
-		if (!errorInscription) {
-			ListUser.getInstance().addUser(user);
-		}
 	
 		if (!errorInscription) {
+			ListUser.getInstance().addUser(user);
+			ListUser.getInstance().setCurrentUser(user);
 			this.getServletContext().getRequestDispatcher("/Service").forward(request, response);
 			return;
 		}

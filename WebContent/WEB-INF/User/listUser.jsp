@@ -1,6 +1,6 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <link rel="stylesheet" type="text/css" href="CSS/listUser.css">
-    <h3>Liste des passagers : </h3><br/>
+<script src="js/tableau.js" type="text/javascript" language="javascript"></script>
 	<table>
 	    <tr>
 	        <th>Nom</th>
@@ -14,6 +14,8 @@
 	            <td>${ user.firstname }</td>
 	            <td>${ user.adress }</td>
 	            <td><a href="mailto:${ user.email }">${ user.email }</a></td>
+	            <td>${ currentUser.adress }</td>
+	            <td>${ user.adress }</td>
 	        </tr>
 	    </c:forEach>
 	</table>       

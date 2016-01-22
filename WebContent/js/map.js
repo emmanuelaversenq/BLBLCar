@@ -2,6 +2,7 @@
  * 
  */
 
+
 var directionsService = new google.maps.DirectionsService(); // service GoogleMaps
 var map,geocoder, marker, marker2; // La carte, le service de géocodage et les marqueurs
 var depart,arrivee,ptCheck; // point de départ, arrivée et de vérification
@@ -134,7 +135,7 @@ function codeAddress(adressDep,adressArr) {
 	                        var longAdr2  = results[0].geometry.location.lng();
 	                        map.setCenter(results[0].geometry.location);
 	                        alert(distance(latAdr1, longAdr1, latAdr2, longAdr2));
-	                        
+	                        return distance(latAdr1, longAdr1, latAdr2, longAdr2);
 	                    } else {
 	                         alert("Le geocodage n\'a pu etre effectue pour la raison suivante: " + status2);
 	                         }
@@ -205,6 +206,5 @@ function affichePerimetre(src){
   	
 	 myCircle.setMap(map); 	  
 }
-
 
 
