@@ -7,6 +7,7 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
     <link rel= "stylesheet" type = "text/css" href="CSS/identification.css"/>
+     <link rel= "stylesheet" type = "text/css" href="CSS/inscription.css"/>
 </head>
 <body>
     <form  method="Post" action="BLBLCar">
@@ -14,9 +15,9 @@
             <div class ="center">
                 <fieldset>
                     <input type="hidden" name="ecran"  value="identification">
-                    <label>Login </label> <input id=nom name=login type=text value="${form['login']}"><span class="error">${errors['login']}</span><br>
-                    <label>Password </label><input type="password" name="pwd" /><span class="error">${errors['pwd']}</span><br>
-                    <input type="submit" name="envoi" value="Identification"> 
+                    <label>Login<span class="requis">*</span> </label> <input id=nom name=login type=text value="${form['login']}"><span class="error">${errors['login']}</span><br>
+                    <label>Password<span class="requis">*</span> </label><input type="password" name="pwd" /><span class="error">${errors['pwd']}</span><br>
+                    <input type="submit" name="envoi" value="Identification">
                 </fieldset>
             </div>
         </div>    

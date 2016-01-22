@@ -15,19 +15,19 @@
 <div class ="center">
     <fieldset>
         <input type="hidden" name="ecran"  value="inscription">
-	    <label>Identifiant</label><input type="text" name="loginIns" value="${ user.login }"/><span class="error">${errors['user.login']}</span><br/>
-	    <label>Mot de passe</label><input type="password" name="pwdIns" value="${ user.pwd }"/><span class="error">${errors['user.pwd']}</span><br/>
-	    <label>Confirmation</label><input type="password" name="pwdConfirm" value="${ pwdConfirm }"/><span class="error">${errors['pwdConfirm']}</span><br/>
+	    <label>Identifiant<span class="requis">*</span></label><input type="text" name="loginIns" value="${ user.login }"/><span class="error">${errors['user.login']}</span><br/>
+	    <label>Mot de passe<span class="requis">*</span></label><input type="password" name="pwdIns" value="${ user.pwd }"/><span class="error">${errors['user.pwd']}</span><br/>
+	    <label>Confirmation<span class="requis">*</span></label><input type="password" name="pwdConfirm" value="${ pwdConfirm }"/><span class="error">${errors['pwdConfirm']}</span><br/>
     </fieldset>
      </div> 
     <div class ="center">
     <fieldset>
-	    <label>Nom</label><input type="text" name="name" value="${ user.name }"/><span class="error">${errors['user.name']}</span><br/>
-	    <label>Prénom</label><input type="text" name="firstname" value="${ user.firstname }"/><span class="error">${errors['user.firstname']}</span><br/>
-	    <label>Adresse e-mail</label><input type="text" name="email" value="${ user.email }"/><span class="error">${errors['user.email']}</span><br/>
-	    <label>Adresse : rue</label><input type="text" name="street" value="${ adress.street }"/><span class="error">${errors['adress.street']}</span><br/>
+	    <label>Nom<span class="requis">*</span></label><input type="text" name="name" value="${ user.name }"/><span class="error">${errors['user.name']}</span><br/>
+	    <label>Prénom<span class="requis">*</span></label><input type="text" name="firstname" value="${ user.firstname }"/><span class="error">${errors['user.firstname']}</span><br/>
+	    <label>Adresse e-mail<span class="requis">*</span></label><input type="text" name="email" value="${ user.email }"/><span class="error">${errors['user.email']}</span><br/>
+	    <label>Adresse : rue<span class="requis">*</span></label><input type="text" name="street" value="${ adress.street }"/><span class="error">${errors['adress.street']}</span><br/>
         <label>CP</label><input type="text" name="cp" value="${ adress.cp }"/><br/>
-	    <label>ville</label><input type="text" name="city" value="${ adress.city }"/><span class="error">${errors['adress.city']}</span><br/>
+	    <label>ville<span class="requis">*</span></label><input type="text" name="city" value="${ adress.city }"/><span class="error">${errors['adress.city']}</span><br/>
 	    	    
 	    <c:if test="${ user.driver }">
 	       <input type="checkbox" name="driver" value="driver" checked="checked"/>
