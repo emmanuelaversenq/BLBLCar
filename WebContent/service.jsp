@@ -11,8 +11,13 @@
         <h2>Bienvenue sur la page service de BL BL Car</h2><br/><br/>
         <div>
             <c:import url="/WEB-INF/User/listUser.jsp" />
+            
         </div>
+        
         <br/><br/>
     </form>
+    <div>
+        <c:import url="/WEB-INF/Map/map.jsp" />
+    </div>
 </body>
 </html>
