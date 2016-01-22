@@ -9,13 +9,14 @@
 	        <th>e.mail</th>
 	    </tr>
 	    <c:forEach var="user" items="${ listPassenger }">
-	        <tr class="zebre">
+	        <tr class= "zebre" name="zebre">
 	            <td>${ user.name }</td>
 	            <td>${ user.firstname }</td>
 	            <td>${ user.adress }</td>
 	            <td><a href="mailto:${ user.email }">${ user.email }</a></td>
-	            <td>${ currentUser.adress }</td>
-	            <td>${ user.adress }</td>
+	            <td class="hidden">${ currentUser.adress }</td>
+	            <td class="hidden">${ user.adress }</td>
+	            <td class="hidden" name="hiddenRadius"></td>
 	        </tr>
 	    </c:forEach>
 	</table>       

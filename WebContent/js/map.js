@@ -117,9 +117,9 @@ function rechercher(src,src2){
 
 
 
-function codeAddress(adressDep,adressArr) {
+function codeAddress(adressDep,adressArr,res) {
 	/* Appel au service de geocodage avec l'adresse en paramètre */
-	       geocoder.geocode( { 'address': document.getElementById(adressDep).value}, function(results,status       ){
+	       geocoder.geocode( { 'address': adressDep}, function(results,status       ){
 	       /* Si l'adresse a pu être géolocalisée */
 	       if (status == google.maps.GeocoderStatus.OK) {
 	             /* Récupération de sa latitude et de sa longitude */
@@ -127,15 +127,15 @@ function codeAddress(adressDep,adressArr) {
 	           var longAdr1  = results[0].geometry.location.lng();
 	           map.setCenter(results[0].geometry.location);
 	           
-	           geocoder.geocode( { 'address': document.getElementById(adressArr).value}, function(results,status2       ){
+	           geocoder.geocode( { 'address': adressArr}, function(results,status2       ){
 	                    /* Si l'adresse a pu être géolocalisée */
 	                    if (status == google.maps.GeocoderStatus.OK && status2 == google.maps.GeocoderStatus.OK) {
 	                           /* Récupération de sa latitude et de sa longitude */
 	                        var latAdr2 = results[0].geometry.location.lat();
 	                        var longAdr2  = results[0].geometry.location.lng();
 	                        map.setCenter(results[0].geometry.location);
-	                        alert(distance(latAdr1, longAdr1, latAdr2, longAdr2));
-	                        return distance(latAdr1, longAdr1, latAdr2, longAdr2);
+//	                        alert(distance(latAdr1, longAdr1, latAdr2, longAdr2));
+	                        res.innerHTML=distance(latAdr1, longAdr1, latAdr2, longAdr2);
 	                    } else {
 	                         alert("Le geocodage n\'a pu etre effectue pour la raison suivante: " + status2);
 	                         }
@@ -143,10 +143,9 @@ function codeAddress(adressDep,adressArr) {
 	                        });
 	       } else {
 	            alert("Le geocodage n\'a pu etre effectue pour la raison suivante: " + status);
-	            }
+	       }
 	           
-	           });
-	     
+	       });
 	       
 	}
 
