@@ -7,6 +7,29 @@
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <link rel="stylesheet" type="text/css" href="CSS/inscription.css">
 <title>Inscription</title>
+  <script language="JavaScript">
+
+function change()
+{ 
+	nodeParam1 = document.getElementById("condition");
+	
+	
+	 if ((nodeParam1.style.visibility=="visible"))
+	    {
+		 nodeParam1.style.visibility = "Hidden";
+	        
+	       // 
+	    }
+	    else
+	    {
+	    	nodeParam1.style.visibility = "visible";
+	    	
+	    }
+	 
+}
+
+</script>
+
 </head>
 <body>
 <div class = "left"></div> 
@@ -30,10 +53,10 @@
 	    <label>ville</label><input type="text" name="city" value="${ adress.city }"/><span class="error">${errors['adress.city']}</span><br/>
 	    	    
 	    <c:if test="${ user.driver }">
-	       <input type="checkbox" name="driver" value="driver" checked="checked"/>
+	       <input type="checkbox" name="driver" value="driver"  checked="checked" onclick="javascript:change()"/>
 	    </c:if>
 	    <c:if test="${ !user.driver }">
-           <input type="checkbox" name="driver" value="driver"/>
+           <input id="remember" type="checkbox" name="driver" value="driver"  onclick="javascript:change()"/>
         </c:if>Conducteur<br/>
         
         <c:if test="${ user.passenger }">
@@ -42,7 +65,11 @@
         <c:if test="${ !user.passenger }">
            <input type="checkbox" name="passenger" value="passenger"/>
         </c:if>Passager<br/><span class="error">${errors['driverPassenger']}</span><br/>
-        	    
+        	 
+        	<div id="condition"> 
+        	  <c:import url="/WEB-INF/User/condition.jsp" />  
+        	</div>  
+        	  
 	    <input type="submit" name="envoi" value="Enregistrer"/><br/>
 	    <br/>${msgInscription}<br/>
     </fieldset>   

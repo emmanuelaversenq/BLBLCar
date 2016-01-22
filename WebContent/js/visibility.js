@@ -6,7 +6,7 @@ function toggle(param1,param2, param3)
     nodeParam1 = document.getElementById(param1);
     nodeParam2 = document.getElementById(param2);
     nodeParam3 = document.getElementById(param3);
-    
+    document.getElementById("condition").style.visibility = "Hidden";
     if ((nodeParam1.style.visibility=="hidden")||(nodeParam1.style.visibility==""))
     {
         // Contenu caché, le montrer
@@ -24,5 +24,12 @@ function toggle(param1,param2, param3)
     }
 }
 
-
+function  initAll(){
+	if (document.getElementById('remember').checked) {
+		document.getElementById("condition").style.visibility = "visible";
+    } else {
+    	document.getElementById("condition").style.visibility = "hidden";
+    }
+	
+}
 

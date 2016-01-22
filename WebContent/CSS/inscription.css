@@ -81,6 +81,15 @@ mark {
     visibility: Hidden;
 }
 
+#condition {
+    visibility: Hidden;
+     position: absolute;
+     right: 360px;
+     bottom: 170px;
+}
+
+
+
 .bloc{
 	position: absolute;
     top: 35%;
